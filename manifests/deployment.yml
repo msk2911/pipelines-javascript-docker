@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mskpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mskpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: mskpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: mskpipelinesjavascriptdocker 
+          image: testregistry1111-ggd9akh4cncxbkaj.azurecr.io/mskpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
